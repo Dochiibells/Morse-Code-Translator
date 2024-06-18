@@ -6,14 +6,17 @@ const result = document.getElementById("result");
 function Convert() {
     let temp = Number(temperature.value);
 
-    if(toFahrenheit.checked) {
-        CelciustoFarenheit(temp);
-    }else if(toCelsius.checked) {
-        FahrenheitCelcius(temp);
-    }else{
-        result.textContent = "Select a Unit";
+    if(temp == "") {
+        result.textContent = "Please enter a temperature"
+    }else {
+        if(toFahrenheit.checked) {
+            CelciustoFarenheit(temp);
+        }else if(toCelsius.checked) {
+            FahrenheitCelcius(temp);
+        }else{
+            result.textContent = "Select a Unit";
+        }
     }
-}
 
 function CelciustoFarenheit(tempCelsius) {
     let tempFahrenheit = tempCelsius * 9 / 5 + 32;
