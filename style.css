@@ -1,76 +1,243 @@
-html,body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: hsl(6, 14%, 85%);
+    padding: 0;
 }
 
-h1{
-    color: rgb(60, 60, 228);
+h1 {
+    text-shadow: 1px 1px #C4417B;
+    font-size: 3.4em;
+    color: #232371;
 }
 
-form {
-    background-color: white;
+body {
+    background: rgb(247, 243, 235);
+    color: #000000;
+    height: 100vh;
+    font-family: "Poppins";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.form-body,.form-output-body {
+    background: #ffffff;
+    max-width: 700px;
     margin: auto;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 5px 5px 15px hsl(0, 0%, 0%, 0.3);
+    box-shadow: 5px 5px 15px hsla(0, 1%, 42%, 0.3);
+    text-align: center;
 }
 
-#numbertxtbox {
-    width: 50%;
+.form-output-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-play {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+}
+
+#div2 {
+    width: 92% ;
+}
+
+.guide {
+    font-size:  0.9em;
+    text-align: left;
+}
+
+#inputtxtbox, #outtxtbox {
+    width: 80%;
+    height: 50%;
     text-align: center;
     font-size: 2em;
-    border: 2px solid;
-    border-radius: 4px;
-    margin-bottom: 15px;
+    border: 1px solid;
+    margin: 15px;
+    max-width: 90%;
 }
-label {
+
+
+#outtxtbox {
+    text-align: left;
+    font-size: 1em;
+    height: 5em;
     font-size: 1.5em;
+}
+ 
+label {
+    font-size: 1em;
     font-weight: bold;
+    text-shadow: 1px 1px #C4417B;
 }
 
-button {
-  margin-top: 15px;  
-  background: #FF4742;
-  border: 1px solid #FF4742;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
-  outline: 0;
-  padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
+
+/*Play Button.*/
+#playbtn {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica,"Poppins";
+    transition: all .2s;
+    padding: 5px 15px;
+    border-radius: 100px;
+    background: #cfef00;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+  }
+  
+  #playbtn:hover {
+    background: #c4e201;
+  }
+  
+  #playbtn > svg {
+    width: 34px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+  }
+  
+  #playbtn:hover svg {
+    transform: translateX(5px);
+  }
+  
+  #playbtn:active {
+    transform: scale(0.95);
+  }
+  
+  
+
+/* Makes the website responsive. */
+@media (max-width: 768px) {
+
+    .form-body,.form-output-body {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    #inputtxtbox {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 1.5rem;
+    }
+
+    .guide {
+        font-size: 1rem;
+    }
+
+    #output {
+        font-size: 1.8rem;
+    }
 }
 
-button:hover,
-button:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #FF4742;
+@media (max-width: 480px) {
+
+    .form-body,.form-output-body {
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #inputtxtbox {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .guide {
+        font-size: 0.7rem;
+    }
+
+    #output {
+        font-size: 1.4rem;
+    }
+
+    #playbtn {
+        padding: 4px 13px;
+        font-size: 13px;
+    }
 }
 
-button:active {
-  opacity: .5;
+@media (max-width: 450px) {
+
+    .form-body,.form-output-body {
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #inputtxtbox {
+        font-size: 1.4rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .guide {
+        font-size: 0.5rem;
+    }
+
+    #output {
+        font-size: 1.2rem;
+    }
+
+    #playbtn {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+    
 }
 
-#result {
-    font-size: 1.75em;
-    font-weight: bold;
-}
+ @media (max-width: 360px) {
 
+    .form-body,.form-output-body {
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #inputtxtbox {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    .guide {
+        font-size: 0.4rem;
+    }
+
+    #playbtn {
+        padding: 3px 11px;
+        font-size: 11px;
+    }
+ }
